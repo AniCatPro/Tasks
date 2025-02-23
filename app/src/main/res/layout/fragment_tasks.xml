@@ -15,32 +15,37 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/task_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter a task name"
-            android:inputType="text"
-            android:text="@={viewModel.newTaskName}"/>
 
-        <Button
-            android:id="@+id/save_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Save Task"
-            android:onClick="@{() -> viewModel.addTask()}"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tasks_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="533dp"
             android:layout_weight="1"
             android:gravity="top"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            />
+            app:spanCount="2" />
+
+        <EditText
+            android:id="@+id/task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="новая задача"
+            android:inputType="text"
+            android:text="@={viewModel.newTaskName}"/>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="right"
+            android:backgroundTint="#4CAF50"
+            android:drawableTop="@android:drawable/ic_menu_add"
+            android:onClick="@{() -> viewModel.addTask()}"
+            app:tint="#4CAF50" />
+
+
     </LinearLayout>
 
 </layout>
